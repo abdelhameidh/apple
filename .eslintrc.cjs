@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a2f5363d2724241598c7e03f98918ee6caab0d2799c6832c3d424ff58cb4d873
-size 641
+module.exports = {
+    root: true,
+    env: { browser: true, es2020: true },
+    extends: [
+      'eslint:recommended',
+      'plugin:react/recommended',
+      'plugin:react/jsx-runtime',
+      'plugin:react-hooks/recommended',
+    ],
+    ignorePatterns: ['dist', '.eslintrc.cjs'],
+    parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+    settings: { react: { version: '18.2' } },
+    plugins: ['react-refresh', '@react-three'],
+    rules: {
+      'react/jsx-no-target-blank': 'off',
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
+    },
+  }
